@@ -1,5 +1,3 @@
-package com.kotlin.tutorial
-
 import java.io.File
 import java.util.stream.Collectors
 
@@ -11,14 +9,18 @@ enum class Strategies(val value: String) {
 
 fun main(args: Array<String>) {
     val arr = File(args[1]).readLines()
-
-    println("=== Menu ===")
-    println("1. Find a person")
-    println("2. Print all persons")
-    println("0. Exit")
-    println("Press the number of line")
+    val menu = arrayOf(
+            "            ",
+            "=== Menu ===",
+            "1. Find a person",
+            "2. Print all persons",
+            "0. Exit",
+            "Print the number of line",
+            "                        "
+    )
 
     loop@ while (true) {
+        menu.forEach { println(it) }
         when (readLine()!!) {
             "1" -> findInfo(arr)
             "2" -> printPeople(arr)
